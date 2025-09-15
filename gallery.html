@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Downton Abbey - Fan Page</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <img id="logo" src="img/downtonabbey_logo.png" alt="Downton Abbey logo">
+        <nav>
+            <button id="menu-toggle" aria-label="Open menu" aria-expanded="false">☰</button> 
+                <ul id="menu">
+                    <a class="enlaces" href="index.html">Home</a>
+                    <a class="enlaces" href="seasons.html">Seasons</a>
+                    <a class="enlaces" href="characters.html">Characters</a>
+                    <a class="enlaces" href="gallery.html">Galery</a>
+                    <a class="enlaces" href="contact.html">Contact</a>
+                </ul>
+        </nav>
+    </header>
+
+    <section id="sinopsis">
+        <h1>The Series Galery</h1>
+    </section>
+
+    
+    <!-- Gallery Grid -->
+    <section id="pictures">
+        <div class="gallery-grid">
+            <div class="image-container" data-index="0">
+                <img class="gallery-image" src="img\gallery\the crawley sisters.jpeg" alt="The three Crawley sisters">
+                <p>The three Crawley sisters</p>
+            </div>
+            
+            <div class="image-container" data-index="1">
+                <img class="gallery-image" src="img\gallery\sybil's_newdress.jpeg" alt="Sybil">
+                <p>Lady Sybil Crawley, first modern woman of the Abbey</p>
+            </div>
+
+            <div class="image-container" data-index="2">
+                <img class="gallery-image" src="img\gallery\mary_mothering.jpeg" alt="Mary">
+                <p>Mothered, ate and served</p>
+            </div>
+
+            <div class="image-container" data-index="3">
+                <img class="gallery-image" src="img\gallery\the heirs.jpeg" alt="Matthew and Mary Crawley">
+                <p>Matthew and Mary Crawley, future Earl and Countess of Grantham</p>
+            </div>
+
+            <div class="image-container" data-index="4">
+                <img class="gallery-image" src="img\gallery\the royals.jpeg" alt="Royals on Downton Abbey">
+                <p>King George V and the infamous Prince Edward VIII</p>
+            </div>
+
+            <div class="image-container" data-index="5">
+                <img class="gallery-image" src="img\gallery\thedoweger.jpeg" alt="The Doweger">
+                <p>The former Countess of Grantham</p>
+            </div>
+
+            <div class="image-container" data-index="6">
+                <img class="gallery-image" src="img\gallery\tom.jpeg" alt="Tom Branson">
+                <p>Tom Branson, the cutest irish socialist</p>
+            </div>
+
+            <div class="image-container" data-index="7">
+                <img class="gallery-image" src="img\gallery\logo.jpeg" alt="The Abbey logo">
+                <p>Downton Abbey</p>
+            </div>
+
+            <div class="image-container" data-index="8">
+                <img class="gallery-image" src="img\gallery\kitchen.jpg" alt="The kitchen maid and the footman">
+                <p>The kitchen maids and the footman</p>
+            </div>
+
+            <div class="image-container" data-index="9">
+                <img class="gallery-image" src="img\gallery\mary_riding.jpg" alt="Mary riding">
+                <p>Lady Mary riding astride for the first time</p>
+            </div>
+
+            <div class="image-container" data-index="10">
+                <img class="gallery-image" src="img\gallery\shooting_party.jpg" alt="The shooting party">
+                <p>Shooting Party</p>
+            </div>
+
+            <div class="image-container" data-index="11">
+                <img class="gallery-image" src="img\gallery\wartime.jpg" alt="Wartime">
+                <p>The Great War at the Abbey</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal/Lightbox -->
+    <div id="imageModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <img id="modalImage" src="" alt="">
+            <div class="modal-caption"></div>
+            <div class="modal-navigation">
+                <button id="prevBtn" class="nav-btn">&#8249;</button>
+                <button id="nextBtn" class="nav-btn">&#8250;</button>
+            </div>
+            <div class="image-counter">
+                <span id="currentImage">1</span> / <span id="totalImages">12</span>
+            </div>
+        </div>
+    </div>
+    
+
+
+
+    <footer>
+        <div>
+            <a href="https://www.tiktok.com/@downtonabbeyofficial?_t=ZM-8zEEgk344QC&_r=1" target="_blank" rel="noopener noreferrer" aria-label="Tik-Tok">
+                <img class="sociales" src="img/tik-tok.png" alt="Tik-Tok Logo">
+            </a>
+            <a href="https://www.instagram.com/downtonabbey_official?igsh=am4xZXBrN24wYW1j" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <img class="sociales" src="img/instagram.png" alt="Instagram Logo">
+            </a>
+            <a href="https://x.com/DowntonAbbey?t=nfc5QjHXMG3tilBXO0Hgsw&s=08" target="_blank" rel="noopener noreferrer" aria-label="Twitter/X">
+                <img class="sociales" src="img/twitter.png" alt="Twitter Logo">
+            </a>
+            <a href="https://youtube.com/@downtonabbey?si=P_vaYw2fkpXowDMq" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+                <img class="sociales" src="img/youtube.png" alt="YouTube Logo">
+            </a>
+        </div>
+        
+        
+        <div>
+            <p>Privacy Policy</p>
+            <p>© 2025</p>
+        </div>
+        
+
+    </footer>
+
+    <script src="js/gallery.js"></script>
+</body>

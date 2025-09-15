@@ -1,0 +1,518 @@
+header{
+    background-color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav {
+    padding-right: 100px; /* Adds space from the right edge */
+     
+}
+
+nav a {
+    font-size: 30px; /* Makes text bigger - adjust this number as needed */
+    text-decoration: none; /* Removes the underline */
+    color: #333; /* Adds color to the text */
+    padding-right: 20px;
+}
+
+#logo{
+    width: 350px;
+    margin: 0px;
+    padding-left: 50px;
+}
+
+body{
+    font-family: "EB Garamond", serif;
+    font-weight: 400;
+    background-color: #E7CD78;
+}
+
+#sinopsis {
+    display: flex;
+    flex-direction: column; /* stack items vertically --> cambia el axis*/
+    align-items: center;
+    font-size: 1.25rem;   /* ~20px; bump as needed (e.g., 1.4rem) */
+    line-height: 1.6;
+    gap: 28px;             /* space between each block */
+}
+
+/* Make each block (p + img) stack nicely */
+#sinopsis div {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start; /* don't vertically center */
+    gap: 16px;
+}
+
+#sinopsis div p {
+    margin: 0;
+    flex: 0 0 auto;      /* don't stretch */
+    max-width: 48ch;     /* readable line length (~38 characters) */ 
+}
+
+#sinopsis > div:last-child {
+    margin-bottom: 24px;
+}
+
+/* Keep poster size responsive and on its own line */
+.posters {
+    width: 100%;
+    max-width: 14em;      /* grows with #sinopsis font-size */
+    height: auto;
+    display: block;
+}
+
+.sociales{
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    
+}
+
+.sociales:hover{
+    width: 50px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+/*WTF!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+/* Optional: bigger on wider screens */
+@media (min-width: 768px) {
+    #sinopsis { font-size: 1.35rem; }
+    img.posters { max-width: 16em; }
+}
+
+footer{
+    background-color: white;
+    padding: 2px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+footer > div:first-child {
+    display: flex;
+    align-items: center;
+    gap: 12px; /* adjust spacing */
+}
+
+.enlaces{
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: color .2s ease, background-color .2s ease, transform .15s ease;
+}
+
+.enlaces:hover{
+    color: #DEB64B;
+}
+
+
+/*RESPONSIVE*/
+/*WTF!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+
+/* Mobile/tablet overrides only */
+@media (max-width: 600px){
+    /* Header/nav */
+    #logo{ max-width: 60vw; height: auto; }
+    nav{ padding-right: 16px; }
+    .enlaces{ font-size: 16px; padding: 6px 10px; }
+
+    /* Sinopsis layout: stack text and image */
+    #sinopsis{ padding: 0 16px; gap: 20px; }
+    #sinopsis div{
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+    #sinopsis div p{ max-width: 60ch; }
+    .posters{ max-width: 220px; width: 100%; height: auto; }
+
+    /* Footer: wrap icons nicely */
+    footer{ flex-wrap: wrap; gap: 12px; padding: 8px 16px; }
+    footer > div:first-child{ flex-wrap: wrap; gap: 12px; }
+}
+
+/* Larger tablets and up (optional tweaks) */
+@media (min-width: 601px) and (max-width: 1024px){
+    #sinopsis div{ gap: 20px; }
+    .posters{ max-width: 240px; }
+}
+
+/* Burger hidden on desktop */
+#menu-toggle{
+    display: none;
+    font-size: 28px;
+    background: none;
+    border: 0;
+    cursor: pointer;
+}
+
+/* Mobile */
+@media (max-width: 600px){
+    /* show burger, hide menu */
+    #menu-toggle{ display: block; }
+    nav ul{ display: none; flex-direction: column; gap: 12px; padding: 12px 0; }
+    nav.open ul{ display: flex; }          /* show when toggled */
+}
+
+
+
+
+/*CONTACT*/
+#contact{
+    
+    font-size: 1.25rem;
+    padding-left: 50px;
+    height: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    line-height: 1.6;
+    gap: 28px;  
+    margin-top: 50px;
+    margin-bottom: 24px;  
+
+}
+ 
+#contact iframe{
+    border-radius: 8px;
+    margin-top: 50px;  /* space above the map */
+}
+
+#contact form{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    gap: 12px;
+}
+
+
+#contact > div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+#theabbey{
+    width: 100%;
+    max-width: 440px;  /* 100px smaller than iframe's 600px */
+    height: auto;
+    margin-top: 20px;    /* space above the image */
+}
+
+#contact_form input, textarea{
+    font-family: "EB Garamond", serif;
+    font-size: 15px;
+}
+
+
+
+
+
+
+/*GALERY*/
+#pictures{
+    margin-top: 50px;
+    margin-bottom: 40px;
+    padding: 20px;
+    align-items: center;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.image-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 8px;
+    overflow: hidden;
+    background: white;
+    padding: 10px;
+}
+
+.image-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.gallery-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 4px;
+    transition: transform 0.3s ease;
+}
+
+.image-container:hover .gallery-image {
+    transform: scale(1.05);
+}
+
+#pictures p {
+    margin: 10px 0 0 0;
+    font-size: 14px;
+    color: #333;
+    font-weight: 500;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.9);
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    position: relative;
+    margin: auto;
+    padding: 0;
+    width: 90%;
+    max-width: 800px;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+}
+
+#modalImage {
+    width: 100%;
+    height: auto;
+    max-height: 70vh;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+
+.modal-caption {
+    color: white;
+    font-size: 18px;
+    margin: 20px 0;
+    font-weight: 500;
+}
+
+.close {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1001;
+    transition: color 0.3s ease;
+}
+
+.close:hover {
+    color: #DEB64B;
+}
+
+.modal-navigation {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none;
+}
+
+.nav-btn {
+    background: rgba(0,0,0,0.7);
+    color: white;
+    border: none;
+    font-size: 30px;
+    padding: 15px 20px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    pointer-events: all;
+    z-index: 1001;
+}
+
+.nav-btn:hover {
+    background: rgba(222, 182, 75, 0.8);
+    transform: scale(1.1);
+}
+
+#prevBtn {
+    margin-left: -60px;
+}
+
+#nextBtn {
+    margin-right: -60px;
+}
+
+.image-counter {
+    position: absolute;
+    bottom: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 16px;
+    background: rgba(0,0,0,0.7);
+    padding: 8px 16px;
+    border-radius: 20px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 15px;
+    }
+    
+    .gallery-image {
+        height: 150px;
+    }
+    
+    .modal-content {
+        width: 95%;
+    }
+    
+    #modalImage {
+        max-height: 60vh;
+    }
+    
+    .nav-btn {
+        font-size: 24px;
+        padding: 12px 16px;
+    }
+    
+    #prevBtn {
+        margin-left: -40px;
+    }
+    
+    #nextBtn {
+        margin-right: -40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 10px;
+    }
+    
+    .gallery-image {
+        height: 120px;
+    }
+    
+    .nav-btn {
+        font-size: 20px;
+        padding: 10px 12px;
+    }
+    
+    #prevBtn {
+        margin-left: -30px;
+    }
+    
+    #nextBtn {
+        margin-right: -30px;
+    }
+}
+
+
+
+
+
+
+/*SEASONS*/
+.theseasons{
+    background-color: antiquewhite;
+    border-radius: 8px;
+    border-color: black;
+    padding: 20px;
+    margin: 40px;
+    font-size: 1.25rem;
+}
+
+
+
+
+/*CHARACTERS*/
+:root{
+    --char-img-w: 300px;   /* adjust if you want a different poster size */
+    --char-img-h: 340px;
+}
+
+/* Card layout */
+.characters_container{
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    text-align: left;
+}
+
+/* Right column matches image height; can be a bit wider */
+#them .characters_container .text{
+    flex: 1 1 360px;            /* allow a wider text column */
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    height: var(--char-img-h);  /* same height as image */
+    overflow: auto;             /* scroll if text is longer */
+    padding-right: 6px;
+}
+
+
+#them .characters_container h3{ margin: 0; }
+
+#them .characters_container .text p{
+    margin: 0;
+    line-height: 1.55;
+    text-align: justify;
+    text-justify: inter-word;
+    hyphens: auto;
+}
+
+/* Center rows of cards */
+#them > div{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;   /* center row */
+}
+
+#them h2{
+    flex-basis: 100%;
+}
+
+/* Desktop card width behavior */
+@media (min-width: 900px){
+    .characters_container{
+        flex: 0 1 calc(25% - 16px);
+        min-width: 0;
+    }
+}
+
+/* 2 cards/row on medium, 3 cards/row on large */
+@media (min-width: 900px){
+    .characters_container{ flex: 0 1 calc(50% - 16px); }
+}
+@media (min-width: 1200px){
+    .characters_container{ flex: 0 1 calc(33.333% - 16px); }
+}
+
+
+
+
+
+
