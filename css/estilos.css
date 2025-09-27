@@ -37,6 +37,7 @@ body{
     font-size: 1.25rem;   /* ~20px; bump as needed (e.g., 1.4rem) */
     line-height: 1.6;
     gap: 28px;             /* space between each block */
+    text-align: center;    /* Center the h1 text */
 }
 
 /* Make each block (p + img) stack nicely */
@@ -50,6 +51,7 @@ body{
 #sinopsis div p {
     margin: 0;
     flex: 0 0 auto;      /* don't stretch */
+    text-align: left;    /* Keep paragraph text left-aligned */
     max-width: 48ch;     /* readable line length (~38 characters) */ 
 }
 
@@ -78,7 +80,9 @@ body{
     margin-left: 10px;
 }
 
-/*WTF!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+
+
+/*!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
 /* Optional: bigger on wider screens */
 @media (min-width: 768px) {
     #sinopsis { font-size: 1.35rem; }
@@ -112,8 +116,10 @@ footer > div:first-child {
 }
 
 
+
+
 /*RESPONSIVE*/
-/*WTF!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+/*!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
 
 /* Mobile/tablet overrides only */
 @media (max-width: 600px){
@@ -224,16 +230,17 @@ footer > div:first-child {
 }
 
 .gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 20px;
     max-width: 1200px;
     margin: 0 auto;
 }
 
 .image-container {
-    display: flex;
-    flex-direction: column;
+    flex: 0 1 250px; /* Flex-grow, flex-shrink, flex-basis */
+    display: flex;    flex-direction: column;
     align-items: center;
     text-align: center;
     cursor: pointer;
@@ -435,14 +442,47 @@ footer > div:first-child {
 
 
 /*SEASONS*/
+
 .theseasons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: antiquewhite;
+    margin: 150px;
+    padding: 24px;
     border-radius: 8px;
-    border-color: black;
-    padding: 20px;
-    margin: 40px;
-    font-size: 1.25rem;
+    gap: 24px;
+    font-size: 25px;
 }
+
+.season-info{
+    flex: 1;
+}
+
+.season-info h2 a {
+    color: inherit; /* Make link color same as heading */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.2s ease;
+}
+
+.season-info h2 a:hover {
+    color: #333; /* Darken text on hover */
+    text-decoration: underline;
+}
+
+/* Responsive stacking for seasons */
+@media (max-width: 768px) {
+    .theseasons {
+        flex-direction: column;
+        margin: 20px 16px;
+    }
+}
+
+
+
+
+
+
 
 
 
@@ -455,23 +495,25 @@ footer > div:first-child {
 
 /* Card layout */
 .characters_container{
-    display: flex;
-    align-items: flex-start;
+    display: flex; 
+    flex-direction: column;
     gap: 16px;
     text-align: left;
+    width: 300px; /* Give cards a fixed width */
+    background-color: antiquewhite;
+    border-radius: 8px;
+    padding: 16px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 /* Right column matches image height; can be a bit wider */
 #them .characters_container .text{
-    flex: 1 1 360px;            /* allow a wider text column */
     display: flex;
     flex-direction: column;
     gap: 8px;
-    height: var(--char-img-h);  /* same height as image */
-    overflow: auto;             /* scroll if text is longer */
-    padding-right: 6px;
 }
 
+#them .characters_container .posters { width: 100%; }
 
 #them .characters_container h3{ margin: 0; }
 
@@ -495,24 +537,8 @@ footer > div:first-child {
     flex-basis: 100%;
 }
 
-/* Desktop card width behavior */
-@media (min-width: 900px){
-    .characters_container{
-        flex: 0 1 calc(25% - 16px);
-        min-width: 0;
-    }
+/* Responsive adjustments for character cards */
+@media (max-width: 768px) {
+    #them > div { gap: 24px; }
+    .characters_container { width: 90%; max-width: 350px; }
 }
-
-/* 2 cards/row on medium, 3 cards/row on large */
-@media (min-width: 900px){
-    .characters_container{ flex: 0 1 calc(50% - 16px); }
-}
-@media (min-width: 1200px){
-    .characters_container{ flex: 0 1 calc(33.333% - 16px); }
-}
-
-
-
-
-
-
