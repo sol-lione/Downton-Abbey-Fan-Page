@@ -18,11 +18,84 @@ nav a {
     padding-right: 20px;
 }
 
+.nav__list {
+    display: flex;
+    align-items: center;
+    list-style: none;
+}
+
+.dropdown__item{
+    cursor: pointer;
+    position: relative; /* Create positioning context for the dropdown */
+    display: flex; /* Align "Seasons" text and arrow */
+    align-items: center;
+    margin-right: 6px; /* Add space between the dropdown and "Characters" */
+}
+
+
+
+.dropdown__link{
+    padding: 0.40rem 1.25rem 0.40rem 2.5rem; /* Reduced top/bottom padding */
+    color: #FFF; /* Use direct value if var is not defined */
+    background-color: var(--black-color-light);
+    display: flex;
+    align-items: center;
+    column-gap: .5rem;
+    font-size: 20px; /* Set a smaller font size for dropdown items */
+    font-weight: var(--font-semi-bold);
+    transition: background-color .3s;
+}
+
+.dropdown__link i{
+    font-size: 1.25rem;
+    font-weight: initial;
+}
+
+.dropdown__link:hover{
+    background-color: #E7CD78;
+    color: #333; /* Change text color for better contrast */
+}
+
+.dropdown__menu{
+    position: absolute; /* Take menu out of document flow */
+    top: 100%; /* Position it right below the parent */
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.85); /* Transparent black background */
+    padding: 10px 0;
+    border-radius: 4px;
+    list-style: none;
+    min-width: 200px;
+    opacity: 0; /* Hidden by default */
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+}
+
+.dropdown__item:hover .dropdown__menu{
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Styles for the dropdown arrow icon */
+.dropdown__arrow {
+    font-size: 1.75rem; /* Size of the arrow */
+    color: black; /* Set arrow color to black */
+    margin-left: 1px; /* Adjust space between "Seasons" and arrow */
+    transform: translateY(2px); /* Nudge the arrow down slightly */
+    
+}
+
+
+
+
 #logo{
     width: 350px;
     margin: 0px;
     padding-left: 50px;
 }
+
+
 
 body{
     font-family: "EB Garamond", serif;
@@ -58,6 +131,8 @@ body{
 #sinopsis > div:last-child {
     margin-bottom: 24px;
 }
+
+
 
 /* Keep poster size responsive and on its own line */
 .posters {
@@ -221,7 +296,7 @@ footer > div:first-child {
 
 
 
-/*GALERY*/
+/*GALLERY*/
 #pictures{
     margin-top: 50px;
     margin-bottom: 40px;
@@ -448,7 +523,7 @@ footer > div:first-child {
     justify-content: center;
     align-items: center;
     background-color: antiquewhite;
-    margin: 150px;
+    margin: 40px 150px;
     padding: 24px;
     border-radius: 8px;
     gap: 24px;
@@ -479,9 +554,32 @@ footer > div:first-child {
 }
 
 
+.episodes-list{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px; /* This will control the space between cards */
+    margin-bottom: 40px;
+}
 
+.episode{
+    background-color: antiquewhite;
+    margin: 0 150px; /* Remove vertical margin */
+    padding: 24px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    font-size: 25px;
+    width: 100%;
+    max-width: 1000px;
+    box-sizing: border-box;
+}
 
-
+.img-episodes{
+    width: 400px;
+    height: 200px;
+}
 
 
 

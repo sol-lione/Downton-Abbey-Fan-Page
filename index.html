@@ -6,20 +6,42 @@
     <title>Downton Abbey - Fan Page</title>
     <link rel="stylesheet" href="css/estilos.css">
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet"/>
 </head>
 
 <body>
     <header>
-         <img id="logo" src="img\header\downtonabbey_logo.png" alt="Downton Abbey logo">
-        <nav>
+        <img id="logo" src="img\header\downtonabbey_logo.png" alt="Downton Abbey logo">
+        <nav class="nav_container">
             <button id="menu-toggle" aria-label="Open menu" aria-expanded="false">☰</button> 
-                <ul id="menu">
+                
+            <div class="nav__menu" id="nav-menu"> 
+                <ul class="nav__list">
                     <a class="enlaces" href="index.html">Home</a>
                     <a class="enlaces" href="seasons.html">Seasons</a>
+
+                    <div class="dropdown__item">
+                        <div class="nav__link">
+                            <i class="ri-arrow-down-s-line dropdown__arrow"></i> <!-- The arrow icon -->
+                        </div>
+
+                        <ul class="dropdown__menu">                            
+                                <a class="dropdown__link" href="seasonOne.html">Season One</a>                                                       
+                                <a class="dropdown__link" href="seasonTwo.html">Season Two</a>                               
+                                <a class="dropdown__link" href="seasonThree.html">Season Three</a>                                                       
+                                <a class="dropdown__link" href="seasonFour.html">Season Four</a>                                                      
+                                <a class="dropdown__link" href="seasonFive.html">Season Five</a>                                                      
+                                <a class="dropdown__link" href="seasonSix.html">Season Six</a>                            
+                        </ul>
+                    </div>
+                    
                     <a class="enlaces" href="characters.html">Characters</a>
                     <a class="enlaces" href="gallery.html">Gallery</a>
                     <a class="enlaces" href="contact.html">Contact</a>
+
                 </ul>
+            </div>
+
         </nav>
     </header>
 
