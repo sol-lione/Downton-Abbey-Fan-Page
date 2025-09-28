@@ -586,57 +586,41 @@ footer > div:first-child {
 
 
 /*CHARACTERS*/
-:root{
-    --char-img-w: 300px;   /* adjust if you want a different poster size */
-    --char-img-h: 340px;
+
+#thefamily{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
 }
 
-/* Card layout */
 .characters_container{
-    display: flex; 
+    display: flex;
     flex-direction: column;
-    gap: 16px;
-    text-align: left;
-    width: 300px; /* Give cards a fixed width */
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: row;
+    align-content: center;
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Make text fill the height of the image */
+    width: 250px;
+    font-size: 18px;
+    margin: 20px;
+}
+
+.character {
+    
+    flex-direction: row;
+    background-color: antiquewhite;   
+    display: flex;
+    justify-content: center;
     background-color: antiquewhite;
+    padding: 24px;
     border-radius: 8px;
-    padding: 16px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin: 20px;
 }
 
-/* Right column matches image height; can be a bit wider */
-#them .characters_container .text{
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-#them .characters_container .posters { width: 100%; }
-
-#them .characters_container h3{ margin: 0; }
-
-#them .characters_container .text p{
-    margin: 0;
-    line-height: 1.55;
-    text-align: justify;
-    text-justify: inter-word;
-    hyphens: auto;
-}
-
-/* Center rows of cards */
-#them > div{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 16px;
-    justify-content: center;   /* center row */
-}
-
-#them h2{
-    flex-basis: 100%;
-}
-
-/* Responsive adjustments for character cards */
-@media (max-width: 768px) {
-    #them > div { gap: 24px; }
-    .characters_container { width: 90%; max-width: 350px; }
-}
