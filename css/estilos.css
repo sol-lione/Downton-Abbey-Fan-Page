@@ -605,12 +605,22 @@ footer > div:first-child {
     .theseasons {
         flex-direction: column;
         margin: 20px 16px;
+        font-size: 18px;
     }
 
     .img-seasons {
         width: 100%;
         max-width: 300px; /* Prevent image from being too large */
         height: auto;
+    }
+}
+
+/* Mobile landscape */
+@media (max-width: 900px) and (max-height: 500px) {
+    .theseasons {
+        flex-direction: column;
+        margin: 20px 16px;
+        font-size: 18px;
     }
 }
 
