@@ -25,13 +25,13 @@
                             <i class="ri-arrow-down-s-line dropdown__arrow"></i> <!-- The arrow icon -->
                         </div>
 
-                        <ul class="dropdown__menu">                            
-                                <a class="dropdown__link" href="seasonOne.html">Season One</a>                                                       
-                                <a class="dropdown__link" href="seasonTwo.html">Season Two</a>                               
-                                <a class="dropdown__link" href="seasonThree.html">Season Three</a>                                                       
-                                <a class="dropdown__link" href="seasonFour.html">Season Four</a>                                                      
-                                <a class="dropdown__link" href="seasonFive.html">Season Five</a>                                                      
-                                <a class="dropdown__link" href="seasonSix.html">Season Six</a>                            
+                        <ul class="dropdown__menu">
+                            <a class="dropdown__link" href="seasonOne.html">Season One</a>
+                            <a class="dropdown__link" href="seasonTwo.html">Season Two</a>
+                            <a class="dropdown__link" href="seasonThree.html">Season Three</a>
+                            <a class="dropdown__link" href="seasonFour.html">Season Four</a>
+                            <a class="dropdown__link" href="seasonFive.html">Season Five</a>
+                            <a class="dropdown__link" href="seasonSix.html">Season Six</a>
                         </ul>
                     </div>
                     
@@ -45,31 +45,37 @@
         </nav>
     </header>
 
-    <section id="contact">
-        <div>
-            <h1>Contact us</h1>
+    <section class="titles">
+        <h1>Contact Us</h1>
+    </section>
 
-            <ul>
-                <li>Email: downtonabbey@gmail.com</li>
-                <li>Phone: +44 01904 000000</li>
-                <li>Address: Yorkshire, England</li>
+    <section id="contact-container">
+        <div class="contact-card">
+            <h2>Get in Touch</h2>
+            <ul class="contact-details">
+                <li><i class="ri-mail-line"></i> <span>downtonabbey@gmail.com</span></li>
+                <li><i class="ri-phone-line"></i> <span>+44 01904 000000</span></li>
+                <li><i class="ri-map-pin-line"></i> <span>Yorkshire, England</span></li>
             </ul>
-
-            <iframe class="map-container" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d601356.6815555401!2d-1.8667749804818587!3d53.9308637729808!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487935b588f279e9%3A0xcba0fa0330518560!2sYorkshire%2C%20Reino%20Unido!5e0!3m2!1ses-419!2sar!4v1756848966185!5m2!1ses-419!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-
+            <iframe class="map-container" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d601356.6815555401!2d-1.8667749804818587!3d53.9308637729808!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487935b588f279e9%3A0xcba0fa0330518560!2sYorkshire%2C%20Reino%20Unido!5e0!3m2!1ses-419!2sar!4v1756848966185!5m2!1ses-419!2sar" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
         
-        <div>
-            <h1>Leave us a note, we will call on you</h1>
-
+        <div class="contact-card">
+            <h2>Leave Us a Note</h2>
             <form id="contact_form">
-                <input type="text" placeholder="Name">
-                <input type="tel" placeholder="Phone +44" minlength="11" maxlength="11">
-                <input type="email" placeholder="Email">
-                <textarea rows="10" cols="20" placeholder="Message"></textarea>
-                <input type="submit" value="Submit">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="e.g., John Smith" required>
                 
-                <img id="theabbey" src="img\contact\theabbey.webp" alt="Downton Abbey Palace">
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" name="phone" placeholder="e.g., 07700 900000" minlength="11" maxlength="11">
+                
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="e.g., john.smith@example.com" required>
+                
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="6" placeholder="Your message here..." required></textarea>
+                
+                <input type="submit" value="Send Message">
             </form>
         </div>
     </section>
@@ -101,6 +107,8 @@
         
 
     </footer>
+
+    <script src="js/main.js"></script>
 
 </body>
 </html>
