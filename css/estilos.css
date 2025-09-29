@@ -234,12 +234,27 @@ footer > div:first-child {
 }
 
 /* Mobile */
-@media (max-width: 600px){
-    /* show burger, hide menu */
+@media (max-width: 768px){ /* Increased breakpoint for tablets */
+    /* show burger */
     #menu-toggle{ display: block; }
-    nav ul{ display: none; flex-direction: column; gap: 12px; padding: 12px 0; }
-    nav.open ul{ display: flex; }          /* show when toggled */
+
+    /* Hide nav menu by default */
+    .nav__menu {
+        display: none;
+        position: absolute;
+        top: 60px; /* Position below header */
+        right: 10px;
+        width: 200px;
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        padding: 10px;
+    }
+
+    .nav__list { flex-direction: column; align-items: flex-start; gap: 12px; }
+    .dropdown__item { margin-right: 0; }
 }
+
 
 
 
@@ -623,4 +638,3 @@ footer > div:first-child {
     border-radius: 8px;
     margin: 20px;
 }
-
